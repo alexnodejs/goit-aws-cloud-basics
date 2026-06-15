@@ -1,0 +1,14 @@
+# Локальні налаштування Claude Code
+.claude/
+
+# macOS
+.DS_Store
+
+# Terraform: стан і секрети не комітимо.
+# (.terraform.lock.hcl навпаки — комітимо, щоб зафіксувати версії провайдерів)
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log

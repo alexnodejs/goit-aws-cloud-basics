@@ -1,0 +1,6 @@
+# Локальні файли Terraform — не комітити в git
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+crash.log
