@@ -16,17 +16,16 @@
 
 ```
 goit-aws-cloud-basics/
-├── terraform/
-│   ├── providers.tf      # AWS-провайдер: профіль + регіон + default_tags
-│   ├── versions.tf       # вимоги до версій Terraform та провайдера
-│   ├── variables.tf      # 👈 УСІ параметри для зміни (профіль, регіон, CIDR, тип EC2…)
-│   ├── main.tf           # VPC, сабнети, Internet Gateway, route tables
-│   ├── security.tf       # Security Groups + Network ACL
-│   ├── alb.tf            # Target Group, Application Load Balancer, listener
-│   ├── compute.tf        # AMI (Amazon Linux 2023), Launch Template (nginx), Auto Scaling Group
-│   └── outputs.tf        # виводи: DNS балансувальника, ID ресурсів
-├── TERRAFORM_GUIDE.md    # детальна покрокова інструкція по мережі (VPC)
-└── CLOUD_WATCH_GUIDE.md  # окрема інструкція: CloudWatch Agent на EC2
+├── README.md
+└── terraform/
+    ├── providers.tf      # AWS-провайдер: профіль + регіон + default_tags
+    ├── versions.tf       # вимоги до версій Terraform та провайдера
+    ├── variables.tf      # 👈 УСІ параметри для зміни (профіль, регіон, CIDR, тип EC2…)
+    ├── main.tf           # VPC, сабнети, Internet Gateway, route tables
+    ├── security.tf       # Security Groups + Network ACL
+    ├── alb.tf            # Target Group, Application Load Balancer, listener
+    ├── compute.tf        # AMI (Amazon Linux 2023), Launch Template (nginx), Auto Scaling Group
+    └── outputs.tf        # виводи: DNS балансувальника, ID ресурсів
 ```
 
 ---
@@ -176,13 +175,6 @@ terraform output alb_dns_name      # DNS-імʼя балансувальника
 cd terraform
 terraform destroy   # ввести yes
 ```
-
----
-
-## 📚 Додаткові інструкції
-
-- [`TERRAFORM_GUIDE.md`](TERRAFORM_GUIDE.md) — детально про мережу (VPC, сабнети, SG, NACL) та ручне створення EC2.
-- [`CLOUD_WATCH_GUIDE.md`](CLOUD_WATCH_GUIDE.md) — встановлення CloudWatch Agent на EC2.
 
 ---
 
