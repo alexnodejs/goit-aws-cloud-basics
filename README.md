@@ -17,7 +17,7 @@
 ```
 goit-aws-cloud-basics/
 ├── README.md
-└── terraform/
+└── terraform-ec2-alb-asg/
     ├── providers.tf      # AWS-провайдер: профіль + регіон + default_tags
     ├── versions.tf       # вимоги до версій Terraform та провайдера
     ├── variables.tf      # 👈 УСІ параметри для зміни (профіль, регіон, CIDR, тип EC2…)
@@ -81,7 +81,7 @@ goit-aws-cloud-basics/
 
 ## ⚙️ Що змінити перед запуском (важливо!)
 
-**Усі параметри лежать в одному файлі — [`terraform/variables.tf`](terraform/variables.tf).**
+**Усі параметри лежать в одному файлі — [`terraform-ec2-alb-asg/variables.tf`](terraform-ec2-alb-asg/variables.tf).**
 Нічого більше міняти не обовʼязково: усі змінні мають значення за замовчуванням.
 
 | Що | Змінна / файл | За замовчуванням | Коли міняти |
@@ -114,11 +114,11 @@ aws sts get-caller-identity --profile goit-aws-mds
 > ```bash
 > terraform apply -var="aws_profile=НАЗВА_ВАШОГО_ПРОФІЛЮ"
 > ```
-> або відредагуйте `default` змінної `aws_profile` у `terraform/variables.tf`.
+> або відредагуйте `default` змінної `aws_profile` у `terraform-ec2-alb-asg/variables.tf`.
 
 ### 2. (Опційно) Винести свої значення у `terraform.tfvars`
 
-Замість правок у `variables.tf` можна створити файл `terraform/terraform.tfvars`
+Замість правок у `variables.tf` можна створити файл `terraform-ec2-alb-asg/terraform.tfvars`
 (він **у `.gitignore`**, тож у репозиторій не потрапить):
 
 ```hcl
@@ -133,7 +133,7 @@ key_name         = "my-ec2-keypair"
 ## 🚀 Запуск
 
 ```bash
-cd terraform
+cd terraform-ec2-alb-asg
 
 terraform init      # завантажити провайдер AWS
 terraform plan      # подивитися, що буде створено (~21 ресурс)
@@ -172,7 +172,7 @@ terraform output alb_dns_name      # DNS-імʼя балансувальника
 Щоб не платити за ALB та EC2, після перевірки видаліть усе:
 
 ```bash
-cd terraform
+cd terraform-ec2-alb-asg
 terraform destroy   # ввести yes
 ```
 
